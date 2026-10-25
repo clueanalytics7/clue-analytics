@@ -15,50 +15,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet" />
-
   <title>Clue Analytics - AI & ML Consulting</title>
 </head>
-<body class="font-sans text-gray-800 dark:text-gray-200">
+<body class="font-sans text-gray-800 dark:text-gray-200 bg-gray-50 dark:bg-gray-950">
   <div id="root"></div>
-
-  <!-- Cookie Consent Popup -->
-  <div id="cookie-consent" class="hidden fixed bottom-0 left-0 w-full bg-gray-800 dark:bg-gray-700 text-white dark:text-gray-200 p-4 z-50">
-    <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between">
-      <p class="text-sm mb-4 md:mb-0">
-        We use cookies to enhance your experience and analyze site usage via Google Analytics. By continuing to use this site, you consent to our use of cookies. Learn more in our <a href="#/privacy-policy" class="underline">Privacy Policy</a>.
-      </p>
-      <div class="flex space-x-4">
-        <button id="accept-cookies" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded">Accept</button>
-        <button id="decline-cookies" class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded">Decline</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Cookie Consent Script -->
-  <script>
-    // Check if user has already made a choice
-    const cookieConsent = localStorage.getItem('cookieConsent');
-    const cookiePopup = document.getElementById('cookie-consent');
-
-    if (!cookieConsent) {
-      // Show popup if no choice has been made
-      cookiePopup.classList.remove('hidden');
-    }
-
-    // Event listeners for Accept/Decline buttons
-    document.getElementById('accept-cookies').addEventListener('click', () => {
-      localStorage.setItem('cookieConsent', 'accepted');
-      cookiePopup.classList.add('hidden');
-      window.dispatchEvent(new Event('cookieConsentAccepted'));
-    });
-
-    document.getElementById('decline-cookies').addEventListener('click', () => {
-      localStorage.setItem('cookieConsent', 'declined');
-      cookiePopup.classList.add('hidden');
-    });
-  </script>
 
   <script type="module" src="/src/main.tsx"></script>
 </body>

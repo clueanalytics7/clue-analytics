@@ -49,64 +49,77 @@ export default function NewsletterSignup() {
       setSubmitted(true);
       setEmail("");
       console.log("Newsletter Signup:", data.message);
-    } catch (err: any) {
-      setError(err.message || "Failed to subscribe. Please try again.");
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : "Failed to subscribe. Please try again.";
+      setError(message);
     } finally {
       setIsLoading(false);
     }
   };
 
   return (
-    <section className="section bg-blue-50 py-16">
-      <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-20 bg-blue-50 dark:bg-gray-900/90 transition-colors" aria-labelledby="newsletter-heading">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          className="max-w-lg mx-auto text-center"
+          className="max-w-2xl mx-auto text-center"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h3 className="text-3xl font-bold mb-6 text-blue-900">Stay Updated</h3>
-          <p className="text-lg text-gray-700 mb-8">
-            Subscribe to our newsletter for the latest AI and ML insights.
+          <h2 id="newsletter-heading" className="text-3xl font-extrabold mb-4 text-blue-900 dark:text-blue-300">
+            Stay Ahead in AI & Machine Learning
+          </h2>
+          <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300 mb-8 leading-relaxed">
+            Subscribe to our research briefing for bi-weekly insights on ML systems, EdgeLabel techniques, and enterprise AI architectures.
           </p>
+
           {submitted ? (
-            <motion.p
-              className="text-green-600 text-lg"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
+            <motion.div
+              className="p-4 rounded-xl bg-green-50 dark:bg-green-950/60 border border-green-200 dark:border-green-800 text-green-700 dark:text-green-300 text-base font-medium"
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.4 }}
+              role="status"
             >
               Thank you for subscribing! Check your inbox for updates.
-            </motion.p>
+            </motion.div>
           ) : (
-            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 justify-center">
-              {error && (
-                <p className="text-red-600 text-sm text-center" role="alert" id="email-error">
-                  {error}
-                </p>
-              )}
+            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 justify-center items-stretch max-w-md mx-auto">
+              <label htmlFor="newsletter-email" className="sr-only">
+                Email address
+              </label>
               <input
                 type="email"
+                id="newsletter-email"
                 value={email}
                 onChange={(e) => {
                   setEmail(e.target.value);
                   setError("");
                 }}
-                placeholder="Enter your email"
-                className="px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm w-full sm:w-64"
+                placeholder="Enter your corporate email"
+                className="px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-xs flex-grow"
                 required
                 disabled={isLoading}
+                aria-invalid={!!error}
                 aria-describedby={error ? "email-error" : undefined}
               />
               <button
                 type="submit"
-                className={`btn sm:w-auto ${isLoading ? "opacity-50 cursor-not-allowed" : ""}`}
-                aria-label="Subscribe to newsletter"
+                className={`px-6 py-3 rounded-xl font-semibold text-white bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 shadow-sm transition-colors focus-visible:ring-2 focus-visible:ring-blue-500 flex-shrink-0 ${
+                  isLoading ? "opacity-50 cursor-not-allowed" : ""
+                }`}
+                aria-label="Subscribe to briefing"
                 disabled={isLoading}
               >
                 {isLoading ? "Subscribing..." : "Subscribe"}
               </button>
             </form>
+          )}
+
+          {error && (
+            <p className="mt-3 text-red-600 dark:text-red-400 text-sm font-medium" role="alert" id="email-error">
+              {error}
+            </p>
           )}
         </motion.div>
       </div>

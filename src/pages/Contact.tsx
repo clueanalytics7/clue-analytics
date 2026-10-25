@@ -68,8 +68,9 @@ export default function Contact() {
       setSubmitted(true);
       setFormData({ name: "", email: "", message: "" });
       console.log("Contact Form Submission:", data.message);
-    } catch (err: any) {
-      setError(err.message || "Failed to send message. Please try again.");
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : "Failed to send message. Please try again.";
+      setError(message);
     } finally {
       setIsLoading(false);
     }

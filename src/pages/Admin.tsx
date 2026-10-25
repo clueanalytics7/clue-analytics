@@ -6,12 +6,26 @@ import MessageTable from '../components/MessageTable';
 
 const auth = getAuth(app);
 
+interface Subscriber {
+  id: string;
+  email: string;
+  subscribed_at: string;
+}
+
+interface Message {
+  id: string;
+  name: string;
+  email: string;
+  message: string;
+  sent_at: string;
+}
+
 const Admin: React.FC = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [subscribers, setSubscribers] = useState<any[]>([]);
-  const [messages, setMessages] = useState<any[]>([]);
+  const [subscribers, setSubscribers] = useState<Subscriber[]>([]);
+  const [messages, setMessages] = useState<Message[]>([]);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
@@ -40,8 +54,8 @@ const Admin: React.FC = () => {
       if (!messagesResponse.ok) throw new Error('Failed to fetch messages');
       const messagesData = await messagesResponse.json();
       setMessages(messagesData);
-    } catch (err: any) {
-      setError(err.message);
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : 'Failed to fetch data');
       setIsAuthenticated(false);
     }
   };
@@ -56,7 +70,7 @@ const Admin: React.FC = () => {
       localStorage.setItem('adminIdToken', idToken);
       setIsAuthenticated(true);
       fetchData(idToken);
-    } catch (err: any) {
+    } catch {
       setError('Invalid credentials or authentication failed');
     }
   };

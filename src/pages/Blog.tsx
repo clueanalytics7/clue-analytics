@@ -269,7 +269,7 @@ export default function Blog() {
   const pageNumbers: (number | string)[] = [];
   const halfPagesToShow = Math.floor(maxPagesToShow / 2);
   let startPage = Math.max(1, currentPage - halfPagesToShow);
-  let endPage = Math.min(totalPages, startPage + maxPagesToShow - 1);
+  const endPage = Math.min(totalPages, startPage + maxPagesToShow - 1);
 
   // Adjust startPage if we're near the end
   if (endPage - startPage + 1 < maxPagesToShow) {

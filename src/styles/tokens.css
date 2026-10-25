@@ -1,0 +1,70 @@
+/**
+ * Clue Analytics Ecosystem Design Tokens
+ * Shared design variables for Clue Analytics Hub, EdgeLabel, and EdgeChart.
+ */
+
+:root {
+  /* Brand Core */
+  --brand-primary: #1e40af;
+  --brand-primary-hover: #1d4ed8;
+  --brand-accent: #0284c7;
+
+  /* Semantic Surface & Foreground (Light Mode) */
+  --surface-canvas: #f9fafb;
+  --surface-card: #ffffff;
+  --surface-muted: #f3f4f6;
+  --border-default: #e5e7eb;
+  --border-highlight: #bfdbfe;
+  --text-main: #111827;
+  --text-secondary: #4b5563;
+  --text-muted: #6b7280;
+
+  /* Accessible Focus Indicator (WCAG 2.4.7 AA) */
+  --focus-ring: 2px solid #2563eb;
+  --focus-offset: 2px;
+
+  /* EdgeChart: Colorblind-Safe Categorical Palette (Okabe-Ito) */
+  --edgechart-series-1: #0072b2; /* Blue */
+  --edgechart-series-2: #e69f00; /* Orange */
+  --edgechart-series-3: #009e73; /* Green */
+  --edgechart-series-4: #d55e00; /* Vermilion */
+  --edgechart-series-5: #cc79a7; /* Reddish Purple */
+  --edgechart-series-6: #56b4e9; /* Sky Blue */
+
+  --edgechart-grid: rgba(107, 114, 128, 0.15);
+  --edgechart-axis: #6b7280;
+  --edgechart-tooltip-bg: rgba(17, 24, 39, 0.95);
+  --edgechart-tooltip-text: #ffffff;
+
+  /* EdgeLabel: High-Visibility Annotation Tokens */
+  --edgelabel-bbox-1: #2563eb; /* Class A: Electric Blue */
+  --edgelabel-bbox-2: #16a34a; /* Class B: Emerald */
+  --edgelabel-bbox-3: #ea580c; /* Class C: Amber Orange */
+  --edgelabel-bbox-4: #9333ea; /* Class D: Purple */
+  --edgelabel-active-stroke: #facc15; /* Active Selection */
+  --edgelabel-crosshair: rgba(255, 255, 255, 0.85);
+}
+
+.dark {
+  /* Semantic Surface & Foreground (Dark Mode) */
+  --surface-canvas: #0b0f19;
+  --surface-card: #111827;
+  --surface-muted: #1f2937;
+  --border-default: #374151;
+  --border-highlight: #1e3a8a;
+  --text-main: #f9fafb;
+  --text-secondary: #d1d5db;
+  --text-muted: #9ca3af;
+
+  /* Accessible Focus Indicator in Dark Mode */
+  --focus-ring: 2px solid #60a5fa;
+
+  /* EdgeChart Dark Theme Overrides */
+  --edgechart-grid: rgba(156, 163, 175, 0.15);
+  --edgechart-axis: #9ca3af;
+  --edgechart-tooltip-bg: rgba(31, 41, 55, 0.95);
+  --edgechart-tooltip-text: #f9fafb;
+
+  /* EdgeLabel Dark Theme Overrides */
+  --edgelabel-crosshair: rgba(255, 255, 255, 0.9);
+}

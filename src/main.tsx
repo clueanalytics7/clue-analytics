@@ -20,10 +20,16 @@ const EducationalEngagementAI = React.lazy(() => import('./pages/case-studies/Ed
 const RestaurantEfficiencyAI = React.lazy(() => import('./pages/case-studies/RestaurantEfficiencyAI'));
 const Fun = React.lazy(() => import('./pages/Fun'));
 
+const getBasename = () => {
+  return window.location.pathname.startsWith('/clue-analytics')
+    ? '/clue-analytics'
+    : '';
+};
+
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <ThemeProvider>
-      <BrowserRouter>
+      <BrowserRouter basename={getBasename()}>
         <Layout>
           <React.Suspense
             fallback={

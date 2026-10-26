@@ -2,6 +2,8 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { FaEnvelope, FaClock, FaTags, FaChartLine } from "react-icons/fa";
 
+import { submitContact } from "../services/api";
+
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
@@ -11,8 +13,6 @@ export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-
-  const BASE_URL = 'https://europe-west1-clue-analytics.cloudfunctions.net/api';
 
   const validateEmail = (email: string) => {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -51,24 +51,11 @@ export default function Contact() {
     setIsLoading(true);
 
     try {
-      const response = await fetch(`${BASE_URL}/contact`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ name, email, message }),
-      });
-
-      const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(data.error || 'Failed to send message');
-      }
-
+      await submitContact({ name, email, message });
       setSubmitted(true);
       setFormData({ name: "", email: "", message: "" });
     } catch (err: unknown) {
-      const msg = err instanceof Error ? err.message : "Failed to send message. Please try again.";
+      const msg = err instanceof Error ? err.message : "Failed to send message. Please email clueanalytics7@gmail.com directly.";
       setError(msg);
     } finally {
       setIsLoading(false);

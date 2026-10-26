@@ -6,6 +6,14 @@
       var base = document.createElement('base');
       base.href = window.location.pathname.startsWith('/clue-analytics') ? '/clue-analytics/' : '/';
       document.head.prepend(base);
+
+      // Instant theme initialization
+      var savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
     })();
   </script>
   <meta charset="UTF-8" />

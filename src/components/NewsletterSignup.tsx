@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 
+import { submitSubscribe } from "../services/api";
+
 export default function NewsletterSignup() {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-
-  const BASE_URL = 'https://europe-west1-clue-analytics.cloudfunctions.net/api';
 
   const validateEmail = (email: string) => {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -32,23 +32,9 @@ export default function NewsletterSignup() {
     setIsLoading(true);
 
     try {
-      const response = await fetch(`${BASE_URL}/subscribe`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email }),
-      });
-
-      const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(data.error || 'Failed to subscribe');
-      }
-
+      await submitSubscribe(email);
       setSubmitted(true);
       setEmail("");
-      console.log("Newsletter Signup:", data.message);
     } catch (err: unknown) {
       const message = err instanceof Error ? err.message : "Failed to subscribe. Please try again.";
       setError(message);

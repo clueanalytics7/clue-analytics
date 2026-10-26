@@ -1,4 +1,3 @@
-// src/components/SubscriberTable.tsx
 import React from 'react';
 
 type Subscriber = {
@@ -13,26 +12,26 @@ interface Props {
 
 const SubscriberTable: React.FC<Props> = ({ subscribers }) => {
   return (
-    <div>
-      <h2 className="text-2xl font-semibold mb-4">Subscribers</h2>
+    <div className="bg-white dark:bg-gray-900 border border-gray-200/80 dark:border-gray-800 rounded-2xl p-6 shadow-xs">
+      <h2 className="text-xl font-bold mb-4 text-gray-900 dark:text-white">Briefing Subscribers</h2>
       {subscribers.length === 0 ? (
-        <p className="text-gray-500">No subscribers found.</p>
+        <p className="text-gray-500 dark:text-gray-400 text-sm">No subscribers found in database.</p>
       ) : (
         <div className="overflow-x-auto">
-          <table className="w-full border border-gray-300 text-left">
-            <thead className="bg-gray-100">
+          <table className="w-full text-left text-sm border-collapse">
+            <thead className="bg-gray-50 dark:bg-gray-800 text-gray-700 dark:text-gray-300 border-b border-gray-200 dark:border-gray-700">
               <tr>
-                <th className="p-2 border">ID</th>
-                <th className="p-2 border">Email</th>
-                <th className="p-2 border">Subscribed At</th>
+                <th className="p-3 font-semibold">Subscriber ID</th>
+                <th className="p-3 font-semibold">Email</th>
+                <th className="p-3 font-semibold">Subscribed Date</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody className="divide-y divide-gray-100 dark:divide-gray-800">
               {subscribers.map((subscriber) => (
-                <tr key={subscriber.id} className="bg-white even:bg-gray-50">
-                  <td className="p-2 border">{subscriber.id}</td>
-                  <td className="p-2 border">{subscriber.email}</td>
-                  <td className="p-2 border">{subscriber.subscribed_at}</td>
+                <tr key={subscriber.id} className="hover:bg-gray-50 dark:hover:bg-gray-800/50 transition">
+                  <td className="p-3 text-gray-500 dark:text-gray-400 font-mono text-xs">{subscriber.id}</td>
+                  <td className="p-3 font-medium text-gray-900 dark:text-white">{subscriber.email}</td>
+                  <td className="p-3 text-gray-500 dark:text-gray-400">{subscriber.subscribed_at}</td>
                 </tr>
               ))}
             </tbody>

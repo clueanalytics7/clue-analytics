@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { HashRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from './context/ThemeContext';
 import Layout from './components/Layout';
 import App from './App';
@@ -23,27 +23,35 @@ const Fun = React.lazy(() => import('./pages/Fun'));
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <ThemeProvider>
-      <HashRouter>
+      <BrowserRouter>
         <Layout>
-          <Routes>
-            <Route path="/" element={<App />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-            <Route path="/admin" element={<Admin />} />
-            <Route path="/fun" element={<Fun />} />
-            <Route path="/case-studies">
-              <Route index element={<UseCases />} />
-              <Route path="retail-personalization" element={<RetailPersonalization />} />
-              <Route path="healthcare-predictive-risk" element={<HealthcarePredictiveRisk />} />
-              <Route path="smart-agriculture-forecasting" element={<SmartAgricultureForecasting />} />
-              <Route path="educational-engagement-ai" element={<EducationalEngagementAI />} />
-              <Route path="restaurant-efficiency-ai" element={<RestaurantEfficiencyAI />} />
-            </Route>
-          </Routes>
+          <React.Suspense
+            fallback={
+              <div className="min-h-[60vh] flex items-center justify-center">
+                <div className="w-8 h-8 border-4 border-blue-600 border-t-transparent rounded-full animate-spin" role="status" aria-label="Loading page" />
+              </div>
+            }
+          >
+            <Routes>
+              <Route path="/" element={<App />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/blog" element={<Blog />} />
+              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+              <Route path="/admin" element={<Admin />} />
+              <Route path="/fun" element={<Fun />} />
+              <Route path="/case-studies">
+                <Route index element={<UseCases />} />
+                <Route path="retail-personalization" element={<RetailPersonalization />} />
+                <Route path="healthcare-predictive-risk" element={<HealthcarePredictiveRisk />} />
+                <Route path="smart-agriculture-forecasting" element={<SmartAgricultureForecasting />} />
+                <Route path="educational-engagement-ai" element={<EducationalEngagementAI />} />
+                <Route path="restaurant-efficiency-ai" element={<RestaurantEfficiencyAI />} />
+              </Route>
+            </Routes>
+          </React.Suspense>
         </Layout>
-      </HashRouter>
+      </BrowserRouter>
     </ThemeProvider>
   </React.StrictMode>
 );

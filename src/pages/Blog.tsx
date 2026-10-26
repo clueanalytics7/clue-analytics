@@ -311,33 +311,41 @@ export default function Blog() {
   }
 
   return (
-    <div className="section bg-white py-16">
-      <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-950 py-16 transition-colors">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center max-w-3xl mx-auto"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h1 className="text-4xl sm:text-5xl font-bold mb-6 text-blue-900">Latest Updates</h1>
-          <p className="text-lg text-gray-700 mb-8 leading-relaxed">
-            Stay informed with our latest insights on AI, machine learning, and industry trends.
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-950/80 text-blue-800 dark:text-blue-300 text-xs font-semibold uppercase tracking-wider mb-4">
+            Research & Intelligence
+          </div>
+          <h1 className="text-4xl sm:text-5xl font-extrabold mb-4 text-gray-900 dark:text-white tracking-tight">
+            AI & Machine Learning Insights
+          </h1>
+          <p className="text-lg text-gray-600 dark:text-gray-300 mb-10 leading-relaxed">
+            Curated research briefings, frontier model benchmarks, and industry updates across computer vision, NLP, and intelligent systems.
           </p>
+
           {/* Filters and Search */}
-          <div className="mb-8 flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <div className="mb-10 flex flex-col sm:flex-row gap-3 justify-center items-center">
             {/* Search Input */}
             <input
               type="text"
               value={searchQuery}
               onChange={(e) => handleSearch(e.target.value)}
-              placeholder="Search blog posts..."
-              className="w-full max-w-md px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+              placeholder="Search research and articles..."
+              aria-label="Search blog posts"
+              className="w-full sm:w-80 px-4 py-2.5 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-xs"
             />
             {/* Source Filter */}
             <select
               value={selectedSource}
               onChange={(e) => handleSourceFilter(e.target.value)}
-              className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+              aria-label="Filter by publication source"
+              className="w-full sm:w-auto px-4 py-2.5 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-xs"
             >
               {sources.map((source) => (
                 <option key={source} value={source}>
@@ -349,7 +357,8 @@ export default function Blog() {
             <select
               value={dateFilter}
               onChange={(e) => handleDateFilter(e.target.value)}
-              className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+              aria-label="Filter by time range"
+              className="w-full sm:w-auto px-4 py-2.5 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-xs"
             >
               {dateOptions.map((option) => (
                 <option key={option.value} value={option.value}>
@@ -373,31 +382,37 @@ export default function Blog() {
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           {currentPosts.map((post) => (
-            <div
+            <article
               key={post.id}
-              className="rounded-2xl shadow-lg p-6 bg-white border border-gray-100 hover:shadow-xl transition-transform transform hover:-translate-y-1"
+              className="rounded-2xl p-6 bg-white dark:bg-gray-900 border border-gray-200/80 dark:border-gray-800 shadow-xs hover:shadow-md hover:border-blue-500/50 dark:hover:border-blue-500/50 transition-all duration-200 flex flex-col justify-between"
             >
-              <a href={post.link} target="_blank" rel="noopener noreferrer">
-                <h3 className="text-2xl font-semibold mb-2 text-gray-900 hover:text-blue-600 transition">
-                  {highlightText(post.title, searchQuery)}
-                </h3>
-              </a>
-              <p className="text-sm text-gray-500 mb-2">{formatDate(post.pubDate)}</p>
-              <p className="text-sm text-gray-500 mb-4">
-                Source: {highlightText(post.source, searchQuery)}
-              </p>
-              <p className="text-gray-600 mb-4">
-                {highlightText(generateExcerpt(post.description), searchQuery)}
-              </p>
-              <a
-                href={post.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-600 hover:underline"
-              >
-                Read More
-              </a>
-            </div>
+              <div>
+                <div className="flex items-center justify-between text-xs text-gray-500 dark:text-gray-400 mb-3">
+                  <span className="font-semibold text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950/60 px-2 py-0.5 rounded-md">
+                    {highlightText(post.source, searchQuery)}
+                  </span>
+                  <time dateTime={post.pubDate}>{formatDate(post.pubDate)}</time>
+                </div>
+                <a href={post.link} target="_blank" rel="noopener noreferrer">
+                  <h2 className="text-xl font-bold mb-3 text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition leading-snug">
+                    {highlightText(post.title, searchQuery)}
+                  </h2>
+                </a>
+                <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4">
+                  {highlightText(generateExcerpt(post.description), searchQuery)}
+                </p>
+              </div>
+              <div className="pt-4 border-t border-gray-100 dark:border-gray-800">
+                <a
+                  href={post.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm font-semibold text-blue-600 dark:text-blue-400 hover:underline inline-flex items-center gap-1"
+                >
+                  Read Original Publication &rarr;
+                </a>
+              </div>
+            </article>
           ))}
         </motion.div>
 
@@ -408,9 +423,9 @@ export default function Blog() {
             <button
               onClick={() => handlePageChange(currentPage - 1)}
               disabled={currentPage === 1}
-              className={`px-4 py-2 rounded-lg ${
+              className={`px-4 py-2 rounded-lg text-sm font-medium ${
                 currentPage === 1
-                  ? "bg-gray-200 text-gray-500 cursor-not-allowed"
+                  ? "bg-gray-100 dark:bg-gray-800 text-gray-400 dark:text-gray-600 cursor-not-allowed"
                   : "bg-blue-600 text-white hover:bg-blue-700"
               } transition`}
             >
@@ -423,10 +438,10 @@ export default function Blog() {
                 <button
                   key={page}
                   onClick={() => handlePageChange(page)}
-                  className={`px-4 py-2 rounded-lg ${
+                  className={`px-3.5 py-1.5 rounded-lg text-sm font-medium ${
                     currentPage === page
-                      ? "bg-blue-600 text-white"
-                      : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+                      ? "bg-blue-600 text-white font-semibold"
+                      : "bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700"
                   } transition`}
                 >
                   {page}
@@ -442,9 +457,9 @@ export default function Blog() {
             <button
               onClick={() => handlePageChange(currentPage + 1)}
               disabled={currentPage === totalPages}
-              className={`px-4 py-2 rounded-lg ${
+              className={`px-4 py-2 rounded-lg text-sm font-medium ${
                 currentPage === totalPages
-                  ? "bg-gray-200 text-gray-500 cursor-not-allowed"
+                  ? "bg-gray-100 dark:bg-gray-800 text-gray-400 dark:text-gray-600 cursor-not-allowed"
                   : "bg-blue-600 text-white hover:bg-blue-700"
               } transition`}
             >

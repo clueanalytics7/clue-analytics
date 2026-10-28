@@ -4,6 +4,8 @@ import { useTheme } from "../context/ThemeContext";
 import { FaSun, FaMoon, FaBars, FaTimes } from "react-icons/fa";
 import ProductSuiteSwitcher from "./ProductSuiteSwitcher";
 
+import CueligenceLogo from "./CueligenceLogo";
+
 const navLinks = [
   { path: "/", label: "Home" },
   { path: "/about", label: "About" },
@@ -34,10 +36,10 @@ export default function Navbar() {
           <div className="flex items-center gap-3">
             <Link
               to="/"
-              className="text-2xl font-bold tracking-tight text-blue-900 dark:text-blue-300 focus-visible:ring-2 focus-visible:ring-blue-500 rounded-lg py-1 px-1 transition-colors"
-              aria-label="Clue Analytics Home"
+              className="focus-visible:ring-2 focus-visible:ring-blue-500 rounded-lg py-1 px-1 transition-opacity hover:opacity-90"
+              aria-label="Cueligence Home"
             >
-              Clue Analytics
+              <CueligenceLogo size={32} />
             </Link>
           </div>
 

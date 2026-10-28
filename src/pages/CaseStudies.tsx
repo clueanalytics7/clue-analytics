@@ -10,7 +10,7 @@ const CaseStudies: React.FC = () => {
           AI & ML Case Studies
         </h1>
         <p className="text-lg text-gray-600 dark:text-gray-400">
-          Discover how Clue Analytics leverages AI and Machine Learning to drive transformative results across industries. From large enterprises to small businesses, our solutions empower organizations to innovate, optimize, and grow.
+          Discover how Cueligence leverages AI and Machine Learning to drive transformative results across industries. From large enterprises to small businesses, our solutions empower organizations to innovate, optimize, and grow.
         </p>
       </section>
 
@@ -26,7 +26,7 @@ const CaseStudies: React.FC = () => {
               A large hospital network struggled with predicting patient outcomes for chronic disease management, leading to inefficiencies in resource allocation.
             </p>
             <h3 className="text-lg font-medium text-gray-700 dark:text-gray-300 mb-2">
-              How Clue Analytics Helped
+              How Cueligence Helped
             </h3>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
               We developed an AI-driven predictive model that analyzed patient data to forecast health risks with 92% accuracy. This allowed the hospital to prioritize high-risk patients, optimize staff scheduling, and reduce readmission rates by 15%.
@@ -48,7 +48,7 @@ const CaseStudies: React.FC = () => {
               A small retail store faced challenges with overstocking and stockouts, resulting in lost sales and increased costs.
             </p>
             <h3 className="text-lg font-medium text-gray-700 dark:text-gray-300 mb-2">
-              How Clue Analytics Helped
+              How Cueligence Helped
             </h3>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
               We implemented an ML-based inventory forecasting system that analyzed sales patterns and seasonal trends. The system reduced stockouts by 30% and cut excess inventory costs by 25%, boosting overall profitability.
@@ -70,7 +70,7 @@ const CaseStudies: React.FC = () => {
               A mid-sized financial institution was losing revenue due to undetected fraudulent transactions, impacting customer trust.
             </p>
             <h3 className="text-lg font-medium text-gray-700 dark:text-gray-300 mb-2">
-              How Clue Analytics Helped
+              How Cueligence Helped
             </h3>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
               We deployed an AI-powered fraud detection system that analyzed transaction patterns in real-time, flagging anomalies with 98% accuracy. This reduced fraudulent losses by 40% and improved customer satisfaction.
@@ -91,7 +91,7 @@ const CaseStudies: React.FC = () => {
           Ready to Transform Your Business?
         </h2>
         <p className="text-lg text-gray-600 dark:text-gray-400 mb-6">
-          Let Clue Analytics help you unlock the power of AI and ML for your organization. Contact us today to discuss your needs and start your journey toward innovation.
+          Let Cueligence help you unlock the power of AI and ML for your organization. Contact us today to discuss your needs and start your journey toward innovation.
         </p>
         <Link
           to="/contact"

@@ -62,7 +62,7 @@ const EducationalEngagementAI: React.FC = () => {
           <section className="p-8 rounded-2xl bg-white dark:bg-gray-900 border border-gray-200/80 dark:border-gray-800 shadow-xs">
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">The Solution & Architecture</h2>
             <p className="mb-4">
-              Clue Analytics engineered an ethical learning analytics pipeline:
+              Cueligence engineered an ethical learning analytics pipeline:
             </p>
             <ul className="space-y-3 mb-6">
               <li className="flex items-start gap-3">

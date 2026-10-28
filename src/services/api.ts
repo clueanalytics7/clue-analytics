@@ -1,5 +1,5 @@
 /**
- * Resilient API Service for Clue Analytics
+ * Resilient API Service for Cueligence
  * Handles newsletter subscriptions and contact inquiries with automatic fallback.
  */
 

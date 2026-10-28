@@ -75,7 +75,7 @@ export default function About() {
             Pioneering Practical Intelligence at the Edge & Enterprise
           </h1>
           <p className="text-lg sm:text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
-            Clue Analytics is an applied AI and ML engineering consultancy. We partner with organizations to convert ambitious data concepts into robust, revenue-driving production systems.
+            Cueligence is an applied AI and machine learning engineering consultancy. We partner with organizations to convert ambitious data concepts into robust, revenue-driving production systems.
           </p>
         </div>
       </section>
@@ -114,7 +114,7 @@ export default function About() {
           </div>
         </div>
 
-        {/* The Clue Analytics Suite Alignment */}
+        {/* The Cueligence Suite Alignment */}
         <div className="rounded-2xl p-8 sm:p-12 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 shadow-sm mb-20">
           <div className="max-w-3xl mb-8">
             <span className="text-xs font-semibold uppercase tracking-wider text-blue-600 dark:text-blue-400">

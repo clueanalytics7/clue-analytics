@@ -35,7 +35,7 @@ export const CookieConsent: React.FC = () => {
         <div className="flex items-start gap-3 text-sm text-gray-700 dark:text-gray-300">
           <FaCookieBite className="text-blue-600 dark:text-blue-400 text-xl flex-shrink-0 mt-0.5" aria-hidden="true" />
           <p>
-            We use essential cookies and anonymous analytics to improve your experience across Clue Analytics. By continuing, you agree to our cookie policy. Review our{' '}
+            We use essential cookies and anonymous analytics to improve your experience across Cueligence. By continuing, you agree to our cookie policy. Review our{' '}
             <Link to="/privacy-policy" className="text-blue-600 dark:text-blue-400 underline font-medium hover:text-blue-700 dark:hover:text-blue-300">
               Privacy Policy
             </Link>.

@@ -4,7 +4,13 @@
   <script>
     (function() {
       var base = document.createElement('base');
-      base.href = window.location.pathname.startsWith('/clue-analytics') ? '/clue-analytics/' : '/';
+      if (window.location.pathname.startsWith('/cueligence')) {
+        base.href = '/cueligence/';
+      } else if (window.location.pathname.startsWith('/clue-analytics')) {
+        base.href = '/clue-analytics/';
+      } else {
+        base.href = '/';
+      }
       document.head.prepend(base);
 
       // Instant theme initialization
@@ -18,19 +24,20 @@
   </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Clue Analytics provides expert AI and ML consulting to drive business results through strategy, development, and training." />
-  <meta name="keywords" content="AI consulting, machine learning, AI strategy, ML development, AI training, Clue Analytics" />
-  <meta name="author" content="Clue Analytics" />
-  <meta property="og:title" content="Clue Analytics - AI & ML Consulting" />
-  <meta property="og:description" content="Transform your business with our AI and ML expertise. From strategy to implementation, we deliver results." />
+  <meta name="description" content="Cueligence delivers enterprise AI strategy, custom deep learning models, and sovereign edge intelligence tooling including EdgeLabel and EdgeChart." />
+  <meta name="keywords" content="AI consulting, enterprise machine learning, Cueligence, deep learning deployment, edge AI, EdgeLabel, EdgeChart, computer vision, data privacy" />
+  <meta name="author" content="Cueligence" />
+  <meta property="og:title" content="Cueligence — Applied AI & Sovereign Edge Intelligence" />
+  <meta property="og:description" content="Architecting production machine learning and private edge intelligence systems for enterprises." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://clueanalytics7.github.io/clue-analytics/" />
+  <meta property="og:url" content="https://clueanalytics7.github.io/cueligence/" />
   <meta property="og:image" content="./assets/og-image.jpg" />
-  <link rel="icon" type="image/png" href="./assets/favicon.png" />
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+  <link rel="alternate icon" type="image/png" href="./assets/favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-  <title>Clue Analytics - AI & ML Consulting</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <title>Cueligence — Applied AI & Sovereign Edge Intelligence</title>
 
   <!-- SPA redirect decoder for clean URLs on static hosting -->
   <script type="text/javascript">

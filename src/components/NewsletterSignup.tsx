@@ -52,8 +52,8 @@ export default function NewsletterSignup() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 id="newsletter-heading" className="text-3xl font-extrabold mb-4 text-blue-900 dark:text-blue-300">
-            Stay Ahead in AI & Machine Learning
+          <h2 id="newsletter-heading" className="text-3xl font-extrabold mb-4 text-gray-900 dark:text-white">
+            The Cueligence Research Briefing
           </h2>
           <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300 mb-8 leading-relaxed">
             Subscribe to our research briefing for bi-weekly insights on ML systems, EdgeLabel techniques, and enterprise AI architectures.

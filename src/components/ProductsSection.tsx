@@ -11,7 +11,7 @@ export const ProductsSection: React.FC = () => {
             Ecosystem & Products
           </div>
           <h2 id="products-heading" className="text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-white tracking-tight">
-            The Clue Analytics Intelligent Toolchain
+            The Cueligence Intelligent Toolchain
           </h2>
           <p className="mt-4 text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
             Our strategic consulting is backed by dedicated, edge-optimized tools built for modern machine learning workflows.
@@ -63,7 +63,7 @@ export const ProductsSection: React.FC = () => {
 
             <div className="pt-6 border-t border-gray-100 dark:border-gray-700/60 flex items-center justify-between">
               <span className="text-xs text-gray-500 dark:text-gray-400">
-                Part of the Clue Analytics ML Suite
+                Part of the Cueligence ML Suite
               </span>
               <a
                 href="https://github.com/clueanalytics7/edgelabel"
@@ -122,7 +122,7 @@ export const ProductsSection: React.FC = () => {
 
             <div className="pt-6 border-t border-gray-100 dark:border-gray-700/60 flex items-center justify-between">
               <span className="text-xs text-gray-500 dark:text-gray-400">
-                Part of the Clue Analytics ML Suite
+                Part of the Cueligence ML Suite
               </span>
               <a
                 href="https://github.com/clueanalytics7/edgechart"

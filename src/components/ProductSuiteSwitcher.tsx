@@ -15,9 +15,9 @@ interface SuiteProduct {
 
 const products: SuiteProduct[] = [
   {
-    id: "clue-analytics",
-    name: "Clue Analytics",
-    tagline: "AI & ML Strategy, Architecture & Consulting",
+    id: "cueligence",
+    name: "Cueligence",
+    tagline: "Applied AI Strategy, Architecture & Sovereign Production ML",
     badge: "Hub",
     badgeColor: "bg-blue-100 text-blue-800 dark:bg-blue-900/60 dark:text-blue-300",
     icon: <FaLayerGroup className="text-blue-600 dark:text-blue-400 text-lg" />,
@@ -79,7 +79,7 @@ export const ProductSuiteSwitcher: React.FC<{ isMobile?: boolean; onCloseMobile?
     return (
       <div className="py-2 border-t border-b border-gray-200 dark:border-gray-800 my-2">
         <p className="text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400 px-3 mb-2">
-          Clue Analytics Suite
+          Cueligence Intelligent Suite
         </p>
         <div className="space-y-1">
           {products.map((product) => (
@@ -122,7 +122,7 @@ export const ProductSuiteSwitcher: React.FC<{ isMobile?: boolean; onCloseMobile?
         onClick={() => setIsOpen(!isOpen)}
         aria-expanded={isOpen}
         aria-haspopup="true"
-        aria-label="Switch between Clue Analytics products"
+        aria-label="Switch between Cueligence suite products"
         className="flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium rounded-lg text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition focus-visible:ring-2 focus-visible:ring-blue-500"
       >
         <FaLayerGroup className="text-blue-600 dark:text-blue-400 text-sm" aria-hidden="true" />
@@ -141,7 +141,7 @@ export const ProductSuiteSwitcher: React.FC<{ isMobile?: boolean; onCloseMobile?
         >
           <div className="px-3 py-2 border-b border-gray-100 dark:border-gray-800">
             <p className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-              Clue Analytics Ecosystem
+              Cueligence Ecosystem
             </p>
             <p className="text-xs text-gray-400 dark:text-gray-500 mt-0.5">
               Integrated tooling for intelligent data workflows

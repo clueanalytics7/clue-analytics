@@ -21,9 +21,13 @@ const RestaurantEfficiencyAI = React.lazy(() => import('./pages/case-studies/Res
 const Fun = React.lazy(() => import('./pages/Fun'));
 
 const getBasename = () => {
-  return window.location.pathname.startsWith('/clue-analytics')
-    ? '/clue-analytics'
-    : '';
+  if (window.location.pathname.startsWith('/cueligence')) {
+    return '/cueligence';
+  }
+  if (window.location.pathname.startsWith('/clue-analytics')) {
+    return '/clue-analytics';
+  }
+  return '';
 };
 
 ReactDOM.createRoot(document.getElementById('root')!).render(

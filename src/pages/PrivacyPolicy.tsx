@@ -31,7 +31,7 @@ const PrivacyPolicy: React.FC = () => {
               1. Our Privacy Philosophy
             </h2>
             <p className="text-gray-600 dark:text-gray-300 text-sm sm:text-base leading-relaxed">
-              At Clue Analytics, privacy is not an afterthought — it is the foundation of our engineering architecture. Both our strategic consulting services and our open-source tools (EdgeLabel and EdgeChart) are designed to minimize data collection and maintain total client data sovereignty.
+              At Cueligence, privacy is not an afterthought — it is the foundation of our engineering architecture. Both our strategic consulting services and our open-source tools (EdgeLabel and EdgeChart) are designed to minimize data collection and maintain total client data sovereignty.
             </p>
           </section>
 
@@ -40,7 +40,7 @@ const PrivacyPolicy: React.FC = () => {
               2. Data Collected via This Portal
             </h2>
             <p className="text-gray-600 dark:text-gray-300 text-sm sm:text-base leading-relaxed mb-3">
-              When using the Clue Analytics web portal, we may process:
+              When using the Cueligence web portal, we may process:
             </p>
             <ul className="list-disc list-inside space-y-2 text-sm text-gray-600 dark:text-gray-300">
               <li><strong>Contact Inquiries:</strong> Name, professional email address, and project details provided explicitly via our contact or briefing forms.</li>
@@ -56,7 +56,7 @@ const PrivacyPolicy: React.FC = () => {
               When utilizing <strong>EdgeLabel</strong> for dataset annotation or <strong>EdgeChart</strong> for client telemetry:
             </p>
             <ul className="list-disc list-inside space-y-2 text-sm text-gray-600 dark:text-gray-300 mt-2">
-              <li>Image and text datasets loaded into EdgeLabel are processed exclusively inside your local device memory (Client-Side execution) and are never uploaded to Clue Analytics servers.</li>
+              <li>Image and text datasets loaded into EdgeLabel are processed exclusively inside your local device memory (Client-Side execution) and are never uploaded to Cueligence servers.</li>
               <li>Telemetry graphs rendered with EdgeChart operate locally within your application container.</li>
             </ul>
           </section>

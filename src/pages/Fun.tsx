@@ -59,7 +59,7 @@ export default function Fun() {
             <span>AI Brain Break</span>
           </div>
           <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-gray-900 dark:text-white mb-4">
-            The Clue Analytics Fun Corner
+            The Cueligence Cognitive Corner
           </h1>
           <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
             Take a quick cognitive breather from model architectures and loss curves. Test your intuition with curated riddles and engineering humor.
